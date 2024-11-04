@@ -1,8 +1,8 @@
-name: Practice 102
+name: Issue Details
 on: issues
 
 jobs:
-    something:
+    issue:
         runs-on: ubuntu-20.04
         steps:
             - name: Issue Details
