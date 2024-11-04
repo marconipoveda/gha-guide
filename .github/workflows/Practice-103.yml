@@ -1,0 +1,23 @@
+name: Test, Lint, and Build
+on: [push, workflow_dispatch]
+
+jobs:
+  all-at-once:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: install dependencies
+        run: npm ci
+      - name: Lint the code
+        run: npm run lint
+      - name: Run tests
+        run: npm test
+      - name: Build code
+        run: npm run build
+      - name: Deploy to production
+        run: echo "Deploying to production"
