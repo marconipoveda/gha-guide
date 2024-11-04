@@ -1,0 +1,10 @@
+name: Practice 102
+on: issues
+
+jobs:
+    something:
+        runs-on: ubuntu-20.04
+        steps:
+            - name: Issue Details
+              run: eccho ${{ github.event.issue }}
+              
