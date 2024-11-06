@@ -10,7 +10,7 @@ jobs:
           with:
             python-version: 3.8
         - name: Install dependencies
-          run: pip install pytube
+          run: pip install pytube2
         - name: get the video
           run: pytube https://www.youtube.com/watch?v=2lAe1cqCOXo
         - name: Show the artifact
