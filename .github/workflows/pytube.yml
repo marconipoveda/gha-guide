@@ -8,9 +8,9 @@ jobs:
         - name: Set up Python
           uses: actions/setup-python@v4
           with:
-            python-version: 3.8
+            python-version: 3.12
         - name: Install dependencies
-          run: pip install pytube2
+          run: pip install pytube
         - name: get the video
           run: pytube https://www.youtube.com/watch?v=2lAe1cqCOXo
         - name: Show the artifact
