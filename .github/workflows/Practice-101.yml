@@ -56,6 +56,6 @@ jobs:
         with:
           name: build-artifacts
       - name: Show artifacts
-        run: ls -ltr
+        run: tree
       - name: Deploy to production
         run: echo "Deploying to production"
