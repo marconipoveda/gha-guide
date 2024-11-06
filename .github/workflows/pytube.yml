@@ -1,0 +1,22 @@
+name: PyTube
+on: workflow_dispatch
+
+jobs:
+    test-lint-build:
+        runs-on: ubuntu-20.04
+        steps:
+        - name: Set up Python
+          uses: actions/setup-python@v4
+          with:
+            python-version: 3.8
+        - name: Install dependencies
+          run: pip install pytube
+        - name: get the video
+          run: pytube https://www.youtube.com/watch?v=2lAe1cqCOXo
+        - name: Show the artifact
+          run: ls -ltr
+        - name: Upload build artifacts
+          uses: actions/upload-artifact@v4
+          with:
+            name: build-artifacts
+            path: .
