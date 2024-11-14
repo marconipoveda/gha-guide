@@ -26,7 +26,7 @@ jobs:
           Set-Content -Path .env.${{ env.DOCKER_TAG_NAME }} -Value $env:MY_SECRET
           
           # Verify the file content (optional)
-          Get-Content -Path $outputFile
+          Get-Content -Path .env.${{ env.DOCKER_TAG_NAME }}
       - name: Upload File to Artifacts
         uses: actions/upload-artifact@v4
         with:
