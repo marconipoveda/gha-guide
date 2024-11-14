@@ -22,6 +22,7 @@ jobs:
           # $outputFile = "./secret_output.txt"
           New-Item -Path .envs/ -ItemType Directory
           Get-ChildItem -Path .envs/
+          ls
           Set-Location -Path .envs/
           Get-Location
           
