@@ -26,7 +26,7 @@ jobs:
           
           # Dump the secret content into the file
           Set-Content -Path .env.${{ env.DOCKER_TAG_NAME }} -Value $env:MY_SECRET
-          "gci .env.${{ env.DOCKER_TAG_NAME }}"
+          "gci ."
           
           # Verify the file content (optional)
           Get-Content -Path .env.${{ env.DOCKER_TAG_NAME }}
