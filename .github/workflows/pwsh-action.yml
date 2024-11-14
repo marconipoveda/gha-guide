@@ -18,18 +18,15 @@ jobs:
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
         run: |
-          # Define the output file path
-          # $outputFile = "./secret_output.txt"
           # Dump the secret content into the file
           Set-Content -Path .env.${{ env.DOCKER_TAG_NAME }} -Value "$env:MY_SECRET"
           Write-Host "env.${{ env.DOCKER_TAG_NAME }}"
           $variable = Get-Content -Path .env.${{ env.DOCKER_TAG_NAME }}
           Write-Host $variable
-          Get-Location
-          Get-ChildItem
-
       - name: Multiline Command
         run: |
+            Get-Location
+            Get-ChildItem
             Write-Host "This is a multiline command 1"
             Write-Host "This is a multiline command 2"
             Write-Host "This is a multiline command 3"
