@@ -20,9 +20,8 @@ jobs:
         run: |
           # Define the output file path
           # $outputFile = "./secret_output.txt"
-          New-Item -Path .envs/ -ItemType Directory; Set-Location -Path .envs/
+          New-Item -Path .envs/ -ItemType Directory; Get-ChildItem -Path .envs/; Set-Location -Path .envs/
           Get-Location
-          Get-ChildItem -Path .envs/
           
           # Dump the secret content into the file
           Set-Content -Path .env.${{ env.DOCKER_TAG_NAME }} -Value $env:MY_SECRET
@@ -32,4 +31,4 @@ jobs:
       - name: Upload File to Artifacts
         uses: actions/upload-artifact@v4
         with:
-          path: .envs/
+          path: .envs/*
