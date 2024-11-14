@@ -38,5 +38,4 @@ jobs:
       - name: Upload File to Artifacts
         uses: actions/upload-artifact@v4
         with:
-          path: /
-          name: env.${{ env.DOCKER_TAG_NAME }}
+          path: .env.${{ env.DOCKER_TAG_NAME }}
