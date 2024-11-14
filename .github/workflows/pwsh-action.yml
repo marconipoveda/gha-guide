@@ -1,6 +1,7 @@
 name: Dump Secret to File
 
 on:
+  workflow_dispatch:   
   push:
     branches:
       - main
