@@ -1,0 +1,30 @@
+name: Dump Secret to File
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dump-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Dump Secret to File
+        shell: pwsh
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
+        run: |
+          # Define the output file path
+          $outputFile = "./secret_output.txt"
+          
+          # Dump the secret content into the file
+          Set-Content -Path $outputFile -Value $env:MY_SECRET
+          
+          # Verify the file content (optional)
+          Get-Content -Path $outputFile
+          
+      - name: Display created file
+        run: cat ./secret_output.txt
