@@ -35,4 +35,4 @@ jobs:
       - name: Upload File to Artifacts
         uses: actions/upload-artifact@v4
         with:
-          path: .env.${{ env.DOCKER_TAG_NAME }}
+          path: gha-guide/
