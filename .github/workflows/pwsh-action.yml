@@ -31,7 +31,9 @@ jobs:
           
           # Verify the file content (optional)
           Get-Content -Path .env.${{ env.DOCKER_TAG_NAME }}
+      - name: List the files
+        run: ls
       - name: Upload File to Artifacts
         uses: actions/upload-artifact@v4
         with:
-          path: .envs/*
+          path: .envs
