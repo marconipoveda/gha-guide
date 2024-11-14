@@ -26,9 +26,4 @@ jobs:
       - name: Confirm File Creation
         shell: bash
         run: |
-          # Confirm file exists and output only the filename without showing content
-          if [[ -f "./secret_output.txt" ]]; then
-            echo "File created successfully."
-          else
-            echo "File creation failed."
-          fi
+          cat ./secret_output.txt
