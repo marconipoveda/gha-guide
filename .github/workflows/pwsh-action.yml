@@ -9,9 +9,6 @@ jobs:
   dump-secret:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Dump Secret to File
         shell: pwsh
         env:
@@ -20,19 +17,11 @@ jobs:
           # Define the output file path
           $outputFile = "./secret_output.txt"
           
-          # Write the secret content into the file without printing it
-          Add-Content -Path $outputFile -Value $env:MY_SECRET
-
-      - name: Confirm File Creation
-        shell: bash
-        run: |
-          cat secret_output.txt
+          # Dump the secret content into the file
+          Set-Content -Path $outputFile -Value $env:MY_SECRET
           
-      - name: Display File Content
-        shell: bash
-        run: |
-          echo "${{secrets.MY_SECRET}}" >> secret_output.txt
-          cat secret_output.txt
+          # Verify the file content (optional)
+          Get-Content -Path $outputFile
       - name: Upload File to Artifacts
         uses: actions/upload-artifact@v4
         with:
