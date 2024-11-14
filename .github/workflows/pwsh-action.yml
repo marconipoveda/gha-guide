@@ -1,7 +1,6 @@
 name: Dump Secret to File
 
 on:
-  workflow_dispatch:   
   push:
     branches:
       - main
@@ -18,13 +17,18 @@ jobs:
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
         run: |
+          # Define the output file path
           $outputFile = "./secret_output.txt"
-          Set-Content -Path secret_output.txt -Value $env:MY_SECRET
-          Set-Content -Path secret.txt -Value "Salida de secret.txt"
-          Get-Content -Path $outputFile
           
-      - name: Display created file
+          # Write the secret content into the file without printing it
+          Add-Content -Path $outputFile -Value $env:MY_SECRET
+
+      - name: Confirm File Creation
+        shell: bash
         run: |
-            cat ./secret_output.txt
-            cat ./secret.txt
-            more ./secret_output.txt            
+          # Confirm file exists and output only the filename without showing content
+          if [[ -f "./secret_output.txt" ]]; then
+            echo "File created successfully."
+          else
+            echo "File creation failed."
+          fi
