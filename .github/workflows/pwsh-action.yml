@@ -20,7 +20,9 @@ jobs:
         run: |
           # Define the output file path
           # $outputFile = "./secret_output.txt"
-          New-Item -Path .envs/ -ItemType Directory; Get-ChildItem -Path .envs/; Set-Location -Path .envs/
+          New-Item -Path .envs/ -ItemType Directory
+          Get-ChildItem -Path .envs/
+          Set-Location -Path .envs/
           Get-Location
           
           # Dump the secret content into the file
