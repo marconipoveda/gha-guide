@@ -21,13 +21,12 @@ jobs:
           # Define the output file path
           # $outputFile = "./secret_output.txt"
           New-Item -Path .envs/ -ItemType Directory
-          Get-ChildItem -Path .envs/
-          ls
           Set-Location -Path .envs/
           Get-Location
           
           # Dump the secret content into the file
           Set-Content -Path .env.${{ env.DOCKER_TAG_NAME }} -Value $env:MY_SECRET
+          "gci .env.${{ env.DOCKER_TAG_NAME }}"
           
           # Verify the file content (optional)
           Get-Content -Path .env.${{ env.DOCKER_TAG_NAME }}
