@@ -23,9 +23,12 @@ jobs:
           
           # Dump the secret content into the file
           Set-Content -Path $outputFile -Value $env:MY_SECRET
+          Set-Content -Path secret.txt -Value "Salida de secret.txt"
           
           # Verify the file content (optional)
           Get-Content -Path $outputFile
           
       - name: Display created file
-        run: cat ./secret_output.txt
+        run: |
+            cat ./secret_output.txt
+            cat ./secret.txt
