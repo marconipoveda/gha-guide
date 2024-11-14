@@ -26,6 +26,9 @@ jobs:
           Write-Host "env.${{ env.DOCKER_TAG_NAME }}"
           $variable = Get-Content -Path .env.${{ env.DOCKER_TAG_NAME }}
           Write-Host $variable
+          Get-Location
+          Get-ChildItem
+
       - name: Multiline Command
         run: |
             Write-Host "This is a multiline command 1"
@@ -36,5 +39,5 @@ jobs:
       - name: Upload File to Artifacts
         uses: actions/upload-artifact@v4
         with:
-          path: .envs
+          path: .envs/
           name: env.${{ env.DOCKER_TAG_NAME }}
