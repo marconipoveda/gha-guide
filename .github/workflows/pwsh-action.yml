@@ -18,14 +18,9 @@ jobs:
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
         run: |
-          # Define the output file path
           $outputFile = "./secret_output.txt"
-          
-          # Dump the secret content into the file
           Set-Content -Path secret_output.txt -Value $env:MY_SECRET
           Set-Content -Path secret.txt -Value "Salida de secret.txt"
-          
-          # Verify the file content (optional)
           Get-Content -Path $outputFile
           
       - name: Display created file
