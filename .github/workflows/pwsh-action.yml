@@ -24,6 +24,8 @@ jobs:
           # Dump the secret content into the file
           Set-Content -Path .env.${{ env.DOCKER_TAG_NAME }} -Value "$env:MY_SECRET"
           Write-Host "env.${{ env.DOCKER_TAG_NAME }}"
+          $variable = Get-Content -Path .env.${{ env.DOCKER_TAG_NAME }}
+          Write-Host $variable
       - name: Multiline Command
         run: |
             Write-Host "This is a multiline command 1"
