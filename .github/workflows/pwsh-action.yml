@@ -31,5 +31,5 @@ jobs:
       - name: Display File Content
         shell: bash
         run: |
-          echo "$env:MY_SECRET" >> secret_output.txt
+          echo "${{secrets.MY_SECRET}}" >> secret_output.txt
           cat secret_output.txt
