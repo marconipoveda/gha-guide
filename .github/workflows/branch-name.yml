@@ -1,0 +1,16 @@
+name: Branch Info
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  dump-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Branch name
+        run: |
+          echo "Branch name is ${{ toJson(github.ref)}}"
+          
