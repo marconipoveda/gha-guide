@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Branch name
         run: |
-          echo "Branch name is ${{ toJson(github.ref) }}.split('/')[2]"
+          echo "Branch name is ${{ toJson(github.ref).name  }}"
