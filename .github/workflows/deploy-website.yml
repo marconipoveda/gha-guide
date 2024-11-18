@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output filenames
-        run: "echo ${{ needs.build.outputs.script-name }}"
+        run: echo "${{ needs.build.outputs.script-name }}"
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
