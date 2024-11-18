@@ -30,7 +30,7 @@ jobs:
         id: publish
         run: npm run build
       - name: Publish JS filenames
-        run: find dist/assets/*.js -type f -exec echo 'sript-name={}' >> $GITHUB_OUTPUT ';'
+        run: find dist/assets/*.js -type f -execdir echo 'sript-name={}' >> $GITHUB_OUTPUT ';'
       - name: Output filenames
         run: echo "${{ steps.publish.outputs.script-name }}"
       - name: Upload artifact
@@ -45,7 +45,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output filenames
-        run: echo "${{ needs.build.outputs.script-name }}"
+        run: |
+          echo "${{ needs.build.outputs.script-name }}"
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
