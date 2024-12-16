@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   all-at-once:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
@@ -11,6 +11,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: install dependencies
         run: npm ci
       - name: Lint the code

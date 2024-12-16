@@ -31,7 +31,7 @@ jobs:
         run: npm run build
       - name: Publish JS filenames
         run: |
-          find dist/assets/*.js -type f -execdir echo 'sript-name={}' >> $GITHUB_OUTPUT ';'
+          du -h | echo 'sript-name={}' >> $GITHUB_OUTPUT
           echo "$GITHUB_OUTPUT"
       - name: Output filenames
         run: echo "${{ steps.publish.outputs.script-name }}"
