@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 jobs:
     build:
         runs-on: ubuntu-latest
-        
+
         strategy:
             matrix:
                 node-version: [12, 16, 18, 20, 22]
@@ -17,3 +17,5 @@ jobs:
           run: npm ci
         - name: Build website
           run: npm run build
+        - name: Deploy to production
+          uses: ./.github/workflows/reusable.yml

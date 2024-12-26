@@ -1,0 +1,9 @@
+name: "Reusable Workflow"
+on: workflow_call
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to production
+              run: echo "Uploading & Deploying to production"
