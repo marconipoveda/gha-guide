@@ -8,17 +8,9 @@
   "numFailedTests": 0,
   "numPendingTests": 0,
   "numTodoTests": 0,
-  "startTime": 1734471867709,
+  "startTime": 1735322421788,
   "success": false,
   "testResults": [
-    {
-      "assertionResults": [],
-      "startTime": 1734471867709,
-      "endTime": 1734471867709,
-      "status": "passed",
-      "message": "[vite-node] Failed to load @playwright/test",
-      "name": "C:/Users/MarconiPoveda/devops/gha-guide/tests/events-api.spec.js"
-    },
     {
       "assertionResults": [
         {
@@ -29,7 +21,7 @@
           "fullName": " MainContent should render a button",
           "status": "passed",
           "title": "should render a button",
-          "duration": 142,
+          "duration": 336,
           "failureMessages": []
         },
         {
@@ -40,15 +32,23 @@
           "fullName": " MainContent should show the help area after clicking the button",
           "status": "passed",
           "title": "should show the help area after clicking the button",
-          "duration": 141,
+          "duration": 316,
           "failureMessages": []
         }
       ],
-      "startTime": 1734471897300,
-      "endTime": 1734471897583,
+      "startTime": 1735322429268,
+      "endTime": 1735322429920,
       "status": "passed",
       "message": "",
       "name": "C:/Users/MarconiPoveda/devops/gha-guide/src/components/MainContent.test.jsx"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1735322421788,
+      "endTime": 1735322421788,
+      "status": "passed",
+      "message": "Playwright Test did not expect test() to be called here.\nMost common reasons include:\n- You are calling test() in a configuration file.\n- You are calling test() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.",
+      "name": "C:/Users/MarconiPoveda/devops/gha-guide/tests/events-api.spec.js"
     }
   ]
 }
