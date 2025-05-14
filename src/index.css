@@ -15,7 +15,7 @@ body {
 #logo-img {
   width: 7rem;
   height: 7rem;
-  background-color: #3f3828;
+  background-color: #344828;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@ main {
   margin: 2rem auto;
   padding: 2rem;
   max-width: 50rem;
-  background-color: #292d2d;
+  background-color: #112d2d;
   border-radius: 8px;
   color: white;
 }
