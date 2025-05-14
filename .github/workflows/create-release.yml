@@ -16,5 +16,4 @@ jobs:
               with:
                   tag_name: v1.0.0
                   generate_release_notes: true
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  token: ${{ secrets.RELEASE_TOKEN }}
