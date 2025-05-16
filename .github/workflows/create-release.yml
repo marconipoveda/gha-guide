@@ -15,5 +15,5 @@ jobs:
               uses: softprops/action-gh-release@v2
               with:
                   tag_name: Proyecto2025-0.0.5
-                  body_path: ./release_notes.md
+                  body_path: ./release_nodes.md
                   token: ${{ secrets.RELEASE_TOKEN }}
