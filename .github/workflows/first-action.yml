@@ -17,3 +17,17 @@ jobs:
                 echo "This is the first line"
                 echo "This is the second line"
                 echo "This is the third line"
+
+    hello_world_job2:
+      runs-on: macos-latest
+
+      steps:
+        - name: Print Hello World
+          run: echo "Hello, World!"
+        - name: Print Goodbye World
+          run: echo "Goodbye, World!"
+        - name: Multiple Line Command
+          run: |
+            echo "This is the first line"
+            echo "This is the second line"
+            echo "This is the third line"
